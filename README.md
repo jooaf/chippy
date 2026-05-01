@@ -1,5 +1,6 @@
 # Chippy
 This project was used to learn about the Chip8 emulator based on this reference: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM .
+
 The emulator relies on Minifb for the graphics, Clap for the CLI, and `rand` for the CXKK opecode.
 
 ## About this implementation
