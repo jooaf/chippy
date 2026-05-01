@@ -33,3 +33,7 @@ Arguments:
 Options:
   -h, --help  Print help
 ```
+
+## AI Disclaimer
+I used Claude Code to build out the integration tests. I then used this, in conjuction with the tests I wrote
+to make improvements to the implementation and discover bugs. Everything else was written by me as I wanted to learn how to make this emulator.
