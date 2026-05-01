@@ -1,5 +1,5 @@
 # Chippy
-This project was used to learn about the Chip8 emulator based on this reference: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM .
+This project was used to learn about the Chip8 emulator based on this reference: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM . I originally wrote it in Gleam, but ran into some issues since it isn't low level enough.
 
 The emulator relies on [Minifb](https://github.com/emoon/rust_minifb) for the graphics, [Clap](https://github.com/clap-rs/clap) for the CLI, and [rand](https://github.com/rust-random/rand) for the CXKK opecode.
 
