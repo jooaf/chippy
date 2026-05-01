@@ -1,7 +1,7 @@
 # Chippy
 This project was used to learn about the Chip8 emulator based on this reference: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM .
 
-The emulator relies on Minifb for the graphics, Clap for the CLI, and `rand` for the CXKK opecode.
+The emulator relies on [Minifb](https://github.com/emoon/rust_minifb) for the graphics, [Clap](https://github.com/clap-rs/clap) for the CLI, and [rand](https://github.com/rust-random/rand) for the CXKK opecode.
 
 ## About this implementation
 - Cpu runs on a separate thread at 500 Hz, or 500 instructions a second (2ms per instruction).
