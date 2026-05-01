@@ -1,4 +1,4 @@
-use chip8_emu::cpu::CPU;
+use chippy::cpu::CPU;
 use clap::Parser;
 use minifb::{Key, KeyRepeat, Scale, Window, WindowOptions};
 use std::{
@@ -12,7 +12,7 @@ const WIDTH: usize = 64;
 const HEIGHT: usize = 32;
 
 #[derive(Parser)]
-#[command(name = "chip8_emu", about = "CHIP-8 Emulator")]
+#[command(name = "chippy", about = "Chippy")]
 struct Args {
     /// Path to the ROM file
     rom: String,
@@ -67,7 +67,7 @@ fn main() {
     let mut graphics_buffer = vec![0; WIDTH * HEIGHT];
 
     let mut window = Window::new(
-        "CHIP-8 Emulator",
+        "Chippy",
         WIDTH,
         HEIGHT,
         WindowOptions {

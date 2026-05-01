@@ -1,0 +1,19 @@
+# Chippy
+This project was used to learn about the Chip8 emulator based on this reference: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM .
+The emulator relies on Minifb for the graphics, Clap for the CLI, and `rand` for the CXKK opecode.
+
+## About this implementation
+- Cpu runs on a separate thread at 500 Hz, or 500 instructions a second (2ms per instruction).
+- Window runs at 60fps.
+- Runs off binary .rom and .ch8 files.
+
+## CLI
+```sh
+Usage: chippy <ROM>
+
+Arguments:
+  <ROM>  Path to the ROM file
+
+Options:
+  -h, --help  Print help
+```
