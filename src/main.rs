@@ -29,27 +29,9 @@ fn main() {
 
     thread::spawn(move || {
         let mut delay_counter = 0;
-        let mut cur_cycle = 0;
 
         loop {
             let mut cpu = chip8_clone.lock().unwrap();
-
-            if cur_cycle % 1000 == 999 {
-                let text_display = cpu.debug_print_display();
-                dbg!("{:?}", cpu.pretty_print_display(&text_display));
-                dbg!();
-                dbg!();
-                dbg!();
-            }
-            if cpu.keyboard.iter().any(|&k| k != 0) {
-                dbg!(
-                    "CYCLE {:?} : Here is the current keyboard: {:?}",
-                    cur_cycle,
-                    cpu.keyboard
-                );
-            }
-
-            cur_cycle += 1;
 
             if cpu.dt > 0 && (delay_counter % 8 == 7) {
                 cpu.dt -= 1;
@@ -82,10 +64,6 @@ fn main() {
     window.set_target_fps(60);
     while window.is_open() && !window.is_key_down(Key::Escape) {
         let mut chip8 = chip8.lock().unwrap();
-
-        if !window.get_keys().is_empty() {
-            dbg!("The window sees these keys: {:?}", window.get_keys());
-        }
 
         for key in window.get_keys_pressed(KeyRepeat::No).iter() {
             match key {
@@ -143,8 +121,6 @@ fn main() {
                 graphics_buffer[r * WIDTH + i] = black_or_white;
             }
         }
-        // chip8.keyboard = [0; 16];
-        // chip8.curr_key = None;
 
         drop(chip8);
         window
